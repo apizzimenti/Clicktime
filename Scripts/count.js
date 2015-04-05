@@ -21,7 +21,7 @@ function genData() {
     "use strict";
     window.setInterval(function () {
         plusdata[i] = pluscounter;
-        negdata[i] = negcounter;
+        negdata[i] = negcounter - pluscounter;
         i++;
     }, 3000);
 }
