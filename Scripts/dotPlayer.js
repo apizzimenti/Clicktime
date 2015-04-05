@@ -16,7 +16,6 @@ $(document).ready(function () {
         countdown();
         dotChange();
         removeGame();
-        
     });
         
     $('button').click(function () {
