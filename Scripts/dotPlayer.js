@@ -5,15 +5,23 @@
 $(document).ready(function () {
     'use strict';
     
-    var pluscounter, negcounter;
+    var pluscounter = 0, negcounter = 0;
     
     $('#gamewindow > .play-outer').mousedown(function () {
-        $('.play-outer, .chooser').remove();
-        countdown();
+        $('.play-outer').remove();
         var margins = setMargin();
-        $('button').css({'display': 'block'});
+        
+        $('.newbutton, .counter').css({'display': 'block'});
+        
+        window.setTimeout(function () {
+            window.alert(pluscounter);
+            window.alert(negcounter - pluscounter);
+        }, 30000);
+        
+        countdown();
         dotChange();
         removeGame();
+        
     });
         
     $('button').click(function () {
