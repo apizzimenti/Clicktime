@@ -8,9 +8,9 @@ body {
 
 #gamewindow {
     display: inline-block;
-    margin-top: 75px;
-    height: 648px;
-    width: 1152px;
+    margin-top: 25px;
+    height: 576px;
+    width: 1024px;
     border: 1px solid #E8E8EE;;
     }
     
@@ -18,7 +18,7 @@ body {
     display: inline-block;
     height: 100px;
     width: 300px;
-    margin-top: 224px;
+    margin-top: 174px;
     }
     
 .counter {
@@ -44,7 +44,7 @@ body {
     height: 80px;
     width: 80px;
     background: #E8E8EE;
-    margin-top: 274px;
+    margin-top: 238px;
     display: inline-block;
     }
     
@@ -71,7 +71,7 @@ body {
 #done {
     width: auto;
     height: auto;
-    margin-top: 312px;
+    margin-top: 272px;
     font-size: 12px;
     display: none;
     }
