@@ -13,11 +13,6 @@ $(document).ready(function () {
         
         $('.newbutton, .counter').css({'display': 'block'});
         
-        window.setTimeout(function () {
-            window.alert(pluscounter);
-            window.alert(negcounter - pluscounter);
-        }, 30000);
-        
         countdown();
         dotChange();
         removeGame();
