@@ -62,7 +62,9 @@ body {
     }
 
 #graphs p {
-    margin-top: 14.5px;
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Roboto';
     }
 
 .play-outer {
