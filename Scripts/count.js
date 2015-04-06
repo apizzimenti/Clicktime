@@ -9,7 +9,6 @@ function count() {
     
     $('button').click(function () {
         pluscounter++;
-        negcounter++;
         dotChange();
     });
 
@@ -28,7 +27,7 @@ function genData() {
         } else if (negdata[i - 1] === negdata[i]) {
             total[i] = 0;
         } else {
-            total[i] = (negdata[i] - negdata[i - 1]) * 2;
+            total[i] = Math.abs(negdata[i] - negdata[i - 1]) * 10;
         }
         i++;
     }, 3000);
