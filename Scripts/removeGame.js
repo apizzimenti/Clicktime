@@ -5,17 +5,24 @@
 
 function removeGame() {
     'use strict';
-    var pos = [], neg = [];
+    var pos = [], neg = [], tot = [];
     window.setTimeout(function () {
         $('.newbutton').remove();
         $('#done').append('done.');
         $('#done').fadeIn(300);
-        $('#graphs').fadeIn(300);
+        $('#hits, #min').fadeIn(300);
         pos = getPos();
         neg = getNeg();
+        tot = getTotal();
     }, 30000);
     
-    $('#graphs').click(function () {
+    $('#hits').click(function () {
+        $('#canvas').remove();
+        
+        var $frame = document.getElementById('frame'), $canvas = document.createElement('canvas');
+        $canvas.id = 'canvas';
+        $frame.appendChild($canvas);
+        var ctx = document.getElementById('canvas').getContext('2d');
         $('#frame').css({'display': 'inline-block'});
         var data = {
             labels: ['3s', '6s', '9s', '12s', '15s', '18s', '21s', '24s', '27s', '30s'],
@@ -43,9 +50,31 @@ function removeGame() {
             ]
         };
 
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myLine = new Chart(ctx).Line(data, {
-            responsive: true
-        });
+        window.myLine = new Chart(ctx).Line(data, {responsive: true});
+    });
+    
+    $('#min').click(function () {
+        $('#canvas').remove();
+        
+        var $frame = document.getElementById('frame'), $canvas = document.createElement('canvas');
+        $canvas.id = 'canvas';
+        $frame.appendChild($canvas);
+        var ctx = document.getElementById('canvas').getContext('2d');
+        $('#frame').css({'display': 'inline-block'});
+        
+        var barchartdata = {
+            labels: ['3s', '6s', '9s', '12s', '15s', '18s', '21s', '24s', '27s', '30s'],
+            datasets: [
+                {
+                    label: "per minute",
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data: [tot[0], tot[1], tot[2], tot[3], tot[4], tot[5], tot[6], tot[7], tot[8], tot[9]]
+                }
+            ]
+        };
+        window.myBar = new Chart(ctx).Bar(barchartdata, {responsive: true});
     });
 }
