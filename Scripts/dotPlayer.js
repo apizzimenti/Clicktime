@@ -15,5 +15,16 @@ $(document).ready(function () {
         count();
         genData();
         removeGame();
+        
+        $('#reload').click(function () {
+            $('#reload, #min, #hits').css({'display': 'none'});
+            $('#done').css({'display': 'none'});
+            $('.newbutton, .counter').css({'display': 'block'});
+            countdown();
+            dotchange();
+            count();
+            genData();
+            removeGame();
+        });
     });
 });
