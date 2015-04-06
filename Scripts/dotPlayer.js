@@ -7,7 +7,6 @@ $(document).ready(function () {
     
     $('#gamewindow > .play-outer').mousedown(function () {
         $('.play-outer').remove();
-        var margins = setMargin();
         
         $('.newbutton, .counter').css({'display': 'block'});
         countdown();
@@ -17,6 +16,7 @@ $(document).ready(function () {
         removeGame();
         
         $('#reload').click(function () {
+            removeGame();
             $('#reload, #min, #hits').css({'display': 'none'});
             $('#done').css({'display': 'none'});
             $('.newbutton, .counter').css({'display': 'block'});
@@ -24,7 +24,6 @@ $(document).ready(function () {
             dotchange();
             count();
             genData();
-            removeGame();
         });
     });
 });
