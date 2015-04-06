@@ -7,10 +7,9 @@ function removeGame() {
     'use strict';
     var pos = [], neg = [], tot = [];
     window.setTimeout(function () {
-        $('.newbutton').remove();
-        $('#done').append('done.');
+        $('.newbutton').hide();
         $('#done').fadeIn(300);
-        $('#hits, #min').fadeIn(300);
+        $('#hits, #min, #reload').fadeIn(300);
         pos = getPos();
         neg = getNeg();
         tot = getTotal();
