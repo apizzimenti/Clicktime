@@ -15,4 +15,6 @@ function countdown() {
             window.clearInterval(final);
         }
     }, 1000);
+    
+    return timer;
 }
