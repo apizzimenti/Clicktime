@@ -7,13 +7,12 @@ $(document).ready(function () {
     
     $('#gamewindow > .play-outer').mousedown(function () {
         $('.play-outer').remove();
-        
         $('.newbutton, .counter').css({'display': 'block'});
+        removeGame();
         countdown();
         dotChange();
         count();
         genData();
-        removeGame();
         
         $('#reload').click(function () {
             location.reload();
