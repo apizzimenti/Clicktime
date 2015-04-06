@@ -2,7 +2,7 @@
 /*global $, jQuery, alert*/
 /*jslint plusplus: true*/
 
-var pluscounter = 0, negcounter = 0, plusdata = [10], negdata = [10], total = [10], i = 0;
+var pluscounter = 0, negcounter = -1, plusdata = [10], negdata = [10], total = [10], i = 0;
 
 function count() {
     "use strict";
