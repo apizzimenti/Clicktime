@@ -5,14 +5,15 @@
 
 function removeGame() {
     'use strict';
-    var pos = [], neg = [], tot = [];
+    var pos = [], neg = [], tot = [], final;
     window.setTimeout(function () {
         $('.newbutton').hide();
         $('#done').fadeIn(300);
-        $('#hits, #min, #reload').fadeIn(300);
+        $('#hits, #min, #reload, #accuracy').fadeIn(300);
         pos = getPos();
         neg = getNeg();
         tot = getTotal();
+        final = getAve();
     }, 30000);
     
     $('#hits').click(function () {
@@ -75,5 +76,12 @@ function removeGame() {
             ]
         };
         window.myBar = new Chart(ctx).Bar(barchartdata, {responsive: true});
+    });
+    
+    $('#accuracy').click(function () {
+        var $div = document.getElementById('accuracyPane'), $newP = document.createElement('p'), $node = document.createTextNode(final);
+        $newP.appendChild($node);
+        $div.appendChild($newP);
+        $('#accuracyPane').css({'display': 'block'});
     });
 }

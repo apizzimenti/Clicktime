@@ -15,5 +15,8 @@ function getColor() {
         first = Math.floor(Math.random() * letters.length);
         newcolor += letters[first].toString();
     }
+    console.log(newcolor);
     return newcolor;
 }
+
+getColor();
